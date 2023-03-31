@@ -1,0 +1,351 @@
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOuis (20230331022202)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "ouis" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nom" varchar, "prenom" varchar, "sujet" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20230331022202"]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-31 02:22:24.474027"], ["updated_at", "2023-03-31 02:22:24.474027"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/articles" for ::1 at 2023-03-31 04:24:53 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 46.6ms | Allocations: 6648)
+  Rendered layout layouts/application.html.erb (Duration: 296.7ms | Allocations: 84791)
+Completed 500 Internal Server Error in 353ms (ActiveRecord: 0.6ms | Allocations: 96724)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/Users/user/Documents/projets/tmp/cache/assets/sprockets/v4.0.0/YC/YC8S9pYdnTFW095FZefqOVGLzQqVmTX9wDRCXCvxSRs.cache.10780.18712.63333, C:/Users/user/Documents/projets/tmp/cache/assets/sprockets/v4.0.0/YC/YC8S9pYdnTFW095FZefqOVGLzQqVmTX9wDRCXCvxSRs.cache)):
+  
+sprockets (4.2.0) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.2.0) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.2.0) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.2.0) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.2.0) lib/sprockets/cache.rb:143:in `set'
+sprockets (4.2.0) lib/sprockets/loader.rb:266:in `store_asset'
+sprockets (4.2.0) lib/sprockets/loader.rb:226:in `load_from_unloaded'
+sprockets (4.2.0) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.0) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.0) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.0) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.0) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.2.0) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.0) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.0) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.0) lib/sprockets/bundle.rb:32:in `block in call'
+C:/Ruby32/lib/ruby/3.2.0/set.rb:511:in `each_key'
+C:/Ruby32/lib/ruby/3.2.0/set.rb:511:in `each'
+sprockets (4.2.0) lib/sprockets/bundle.rb:31:in `call'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.0) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.0) lib/sprockets/loader.rb:182:in `load_from_unloaded'
+sprockets (4.2.0) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.0) lib/sprockets/loader.rb:337:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.0) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.0) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.0) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.0) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.0) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/articles" for ::1 at 2023-03-31 04:26:01 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1121)
+  Rendered layout layouts/application.html.erb (Duration: 49.0ms | Allocations: 33056)
+Completed 200 OK in 53ms (Views: 50.0ms | ActiveRecord: 0.0ms | Allocations: 33449)
+
+
+Started POST "/articles" for ::1 at 2023-03-31 04:26:06 +0200
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oui"=>{"nom"=>"de", "prenom"=>"de", "sujet"=>"de"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 934)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3181)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 3952)
+
+
+Started POST "/articles" for ::1 at 2023-03-31 04:26:07 +0200
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oui"=>{"nom"=>"de", "prenom"=>"de", "sujet"=>"de"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 934)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3181)
+Completed 200 OK in 10ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 3833)
+
+
+Started POST "/articles" for ::1 at 2023-03-31 04:26:07 +0200
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oui"=>{"nom"=>"de", "prenom"=>"de", "sujet"=>"de"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 934)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3179)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 3813)
+
+
+Started GET "/articles" for ::1 at 2023-03-31 04:27:07 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1202)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3457)
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 3770)
+
+
+Started POST "/articles" for ::1 at 2023-03-31 04:27:10 +0200
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oui"=>{"nom"=>"ed", "prenom"=>"de", "sujet"=>"de"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 934)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 3179)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 3795)
+
+
+Started POST "/articles" for ::1 at 2023-03-31 04:37:00 +0200
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oui"=>{"nom"=>"ed", "prenom"=>"de", "sujet"=>"de"}, "commit"=>"Submit"}
+Completed 500 Internal Server Error in 5ms (Allocations: 1276)
+
+
+  
+NoMethodError (undefined method `index' for Oui:Class):
+  
+app/controllers/articles_controller.rb:3:in `index'
+  [1m[36mOui Load (0.2ms)[0m  [1m[34mSELECT "ouis".* FROM "ouis"[0m
+Started GET "/articles" for ::1 at 2023-03-31 09:22:35 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 26.0ms | Allocations: 4247)
+  Rendered layout layouts/application.html.erb (Duration: 176.8ms | Allocations: 40311)
+Completed 200 OK in 228ms (Views: 189.6ms | ActiveRecord: 0.9ms | Allocations: 50149)
+
+
+Started POST "/articles" for ::1 at 2023-03-31 09:22:46 +0200
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oui"=>{"nom"=>"de", "prenom"=>"de", "sujet"=>"de"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 938)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 3185)
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 3918)
+
+
+Started POST "/articles" for ::1 at 2023-03-31 09:22:48 +0200
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oui"=>{"nom"=>"de", "prenom"=>"de", "sujet"=>"de"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 937)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 3184)
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 3825)
+
+
+Started POST "/articles" for ::1 at 2023-03-31 09:22:49 +0200
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oui"=>{"nom"=>"de", "prenom"=>"de", "sujet"=>"de"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 937)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3184)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 3809)
+
+
+  [1m[36mOui Load (0.2ms)[0m  [1m[34mSELECT "ouis".* FROM "ouis"[0m
+Started GET "/articles" for ::1 at 2023-03-31 09:50:49 +0200
+Started GET "/articles" for ::1 at 2023-03-31 09:52:43 +0200
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2098)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2209)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.7ms | Allocations: 11957)
+
+
+  
+ActionView::Template::Error (undefined method `safe_append=' for nil:NilClass):
+    1:                     <h1> test </h1>
+    2: 
+    3:                     
+    4:                     <% end %>%>
+    5:                     <%= form_with model: @Oui, url: articles_path do |form| %>
+    6:                         <% if @Oui.errors.any? %>
+    7:                         <% @Oui.errors.full_message.each do |message| %>
+  
+app/views/articles/index.html.erb:4:in `compile'
+Started GET "/articles" for ::1 at 2023-03-31 09:52:43 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1454)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | Allocations: 1933)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3022)
+
+
+  
+ActionView::Template::Error (undefined method `safe_append=' for nil:NilClass):
+    1:                     <h1> test </h1>
+    2: 
+    3:                     
+    4:                     <% end %>%>
+    5:                     <%= form_with model: @Oui, url: articles_path do |form| %>
+    6:                         <% if @Oui.errors.any? %>
+    7:                         <% @Oui.errors.full_message.each do |message| %>
+  
+app/views/articles/index.html.erb:4:in `compile'
+Started GET "/articles" for ::1 at 2023-03-31 09:52:59 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1361)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | Allocations: 1449)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 2248)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check                     <h1> test </h1>
+
+                    
+                    <%= form_with model: @Oui, url: articles_path do |form| %>
+                        <% if @Oui.errors.any? %>
+                        <% @Oui.errors.full_message.each do |message| %>
+                        <div><% message%></div>
+                        <% end %>%>
+                            <% @test %>
+                        <%= form.label :nom %>
+                            <%= form.text_field :nom, class: "form-control" %>
+                        </div>
+                        <div class="form-group">
+                            <%= form.label :prenom %>
+                        <%= form.text_field :prenom, class: "form-control" %>
+                        </div>
+                        <div class="form-group">
+                            <%= form.label :sujet %>
+                            <%= form.text_area :sujet, class: "form-control" %>
+                        </div>
+                        <%= form.submit "Submit", class: "btn btn-primary" %>
+
+                        <%=@Oui %>
+                    <% end %>
+
+     
+):
+1:                        <h1> test </h1>
+2:    
+3:                        
+4:                        <%= form_with model: @Oui, url: articles_path do |form| %>
+5:                            <% if @Oui.errors.any? %>
+6:                            <% @Oui.errors.full_message.each do |message| %>
+7:                            <div><% message%></div>
+8:                            <% end %>%>
+9:                                <% @test %>
+10:                            <%= form.label :nom %>
+11:                                <%= form.text_field :nom, class: "form-control" %>
+12:                            </div>
+13:                            <div class="form-group">
+14:                                <%= form.label :prenom %>
+15:                            <%= form.text_field :prenom, class: "form-control" %>
+16:                            </div>
+17:                            <div class="form-group">
+18:                                <%= form.label :sujet %>
+19:                                <%= form.text_area :sujet, class: "form-control" %>
+20:                            </div>
+21:                            <%= form.submit "Submit", class: "btn btn-primary" %>
+22:    
+23:                            <%=@Oui %>
+24:                        <% end %>
+25:    
+26:         
+  
+app/views/articles/index.html.erb:28: syntax error, unexpected end-of-input
+app/views/articles/index.html.erb:28: syntax error, unexpected end-of-input
+app/views/articles/index.html.erb:28: syntax error, unexpected end-of-input
+app/views/articles/index.html.erb:28: syntax error, unexpected end-of-input
+app/views/articles/index.html.erb:28: syntax error, unexpected end-of-input
+app/views/articles/index.html.erb:28: syntax error, unexpected end-of-input
+Started GET "/articles" for ::1 at 2023-03-31 09:53:18 +0200
+Processing by ArticlesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 96.2ms | Allocations: 15946)
+  Rendered layout layouts/application.html.erb (Duration: 158.0ms | Allocations: 51925)
+Completed 200 OK in 166ms (Views: 162.7ms | ActiveRecord: 0.0ms | Allocations: 52822)
+
+
+Started POST "/articles" for ::1 at 2023-03-31 09:53:23 +0200
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oui"=>{"nom"=>"de", "prenom"=>"de", "sujet"=>"de"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 938)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 3184)
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 3924)
+
+
+Started POST "/articles" for ::1 at 2023-03-31 09:53:29 +0200
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oui"=>{"nom"=>"dedede", "prenom"=>"dedede", "sujet"=>"de"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 937)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3183)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 3808)
+
+
+  [1m[36mOui Load (0.2ms)[0m  [1m[34mSELECT "ouis".* FROM "ouis"[0m
+Started POST "/articles" for ::1 at 2023-03-31 09:57:29 +0200
+Processing by ArticlesController#index as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "oui"=>{"nom"=>"dedede", "prenom"=>"dedede", "sujet"=>"dealors"}, "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering articles/index.html.erb within layouts/application
+  Rendered articles/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1089)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 14761)
+Completed 200 OK in 36ms (Views: 28.0ms | ActiveRecord: 0.8ms | Allocations: 18638)
+
+
